@@ -1,0 +1,71 @@
+body{background-color: #E5E5E5;
+
+}
+.login {
+    height: 60%;
+    width: 30%;
+    border-radius: 16px;
+    background: #017849;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media only screen and (max-width: 767px) {
+    .login {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .login {
+        height: 90%;
+        width: 90%;
+        border-radius: 8px;
+    }
+}
+.labile {
+    color: white;
+}
+
+.form-group {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 2%;
+}
+
+#cadastro {
+    margin-top: 5%;
+}
+
+.img1 {
+    margin-top: 5%;
+    margin-left: 20%;
+}
+
+#botao1 {
+    margin-top: 2%;
+    margin-left: 10%;
+    height: 8%;
+    width: 80%;
+    border: 1px solid white;
+    border-radius: 8px;
+    background: #017849;
+    color: white;
+    margin-bottom: 2%;
+}
+
+a {
+    color: white;
+    height: 5%;
+    width: 50%;
+    margin-left: 35%;
+    margin-top: 5%;
+}
+#cabeçalho {
+    height: 100px;
+    color: #00995D;
+    font-family: Montserrat;
+}

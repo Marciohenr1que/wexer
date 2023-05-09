@@ -1,0 +1,344 @@
+/* Regras de estilo para telas menores que 768px */
+
+@media only screen and (min-width: 768px) {
+    #cadastro3 {
+        height: 50%;
+        width: 30%;
+        border-radius: 16px;
+        background: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+        .img2 {
+            display: block;
+            margin: 24px auto 0;
+        }
+.bemvindo {   
+    margin-left: 30%;
+    margin-right: auto;
+    max-width: 80%;
+    text-align: center;
+}
+
+}
+
+    .preencha {
+        margin-top: 7px;
+        margin-left: 20px;
+        margin-bottom: 24px;
+        text-align: center;
+    }
+
+    #nome1 {
+        margin-left: 20px;
+        margin-bottom: 16px;
+    }
+
+    .form-group {
+        margin-bottom: 32px;
+        width: calc(100% - 40px);
+        margin-left: 20px;
+    }
+
+ @media only screen and (min-width: 68px) {
+     #botao1 {
+         margin-bottom: 32px;
+         background-color: #00995D;
+         color: white;
+         text-align: center;
+         margin-left: auto;
+         margin-right: auto;
+         display: block;
+         width: calc(100% - 40px);
+         max-width: 380px;
+     }
+
+     .password {
+         margin-top: 24px;
+         margin-left: auto;
+         margin-right: auto;
+         background-color: white;
+         height: 70%;
+         width: 60%;
+         border-radius: 16px;
+         position: static;
+         max-width: 380px;
+     }
+
+     .logo1 {
+         margin-left: 25%;
+         margin-right: auto;
+         margin-top: 24px;
+         display: block;
+     }
+
+     .logo2 {
+         margin-left: auto;
+         margin-right: auto;
+         margin-top: 20px;
+         text-align: center;
+     }
+
+     .logo3 {
+         margin-left: auto;
+         margin-right: auto;
+         margin-top: 6px;
+         margin-bottom: 24px;
+         text-align: center;
+     }
+
+     .form-group3 {
+         display: flex;
+         flex-direction: column;
+     }
+
+     .form-control2 {
+         height: 48px;
+         width: calc(100% - 40px);
+         border: 1px solid #BDBDBD;
+         border-radius: 8px;
+         margin-bottom: 16px;
+         margin-left: auto;
+         margin-right: auto;
+         max-width: 380px;
+     }
+
+     .labile1 {
+         margin-left: auto;
+         margin-right: auto;
+         text-align: center;
+     }
+
+     .senha1 {
+         margin-left: auto;
+         margin-right: auto;
+         margin-top: 6px;
+         text-align: center;
+     }
+ }
+
+.final {
+    margin-top: 22px;
+    margin-left: 260px
+}
+
+#botao12 {
+    background-color: #00995D;
+    height: 48px;
+    color: white;
+    align-items: center;
+    margin-bottom: 40px;
+    width: 192px;
+    border-radius: 8px;
+    border: none;
+    padding: 0px 12px 0px 24px;
+
+
+
+}
+#cabeçalho{
+    height: 100px;
+    color: #00995D;
+    font-family: Montserrat;
+}
+ #emaiL {
+     font-size: 30px;
+ }
+#tudo{
+   
+    background-color: #E5E5E5
+}
+#botao34{background-color: #00995D;
+  display: flex;
+  font-size: 20px;
+  
+}
+.button1{
+    background-color: white;
+    border: none;
+}
+/* ......modalcadastro........ */
+#meuModal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 90%;
+    width: 90%;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    padding: 30px;
+    border: none;
+
+}
+
+#meuModal input[type="text"],
+#meuModal input[type="email"],
+#meuModal input[type="date"],
+#meuModal select {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1%;
+    width: 70%;
+    box-sizing: border-box;
+    border: none;
+    border: 1px solid #00995D;
+    border-radius: 10px;
+    font-size: 30px;
+    font-family: Arial, sans-serif;
+    
+}
+
+#meuModal label {
+    margin-bottom: 1%;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+.final{
+    display: flex;
+    justify-content: flex-end;
+}
+/* button do modal cadastro */
+#cancelarcadastro{
+    font-size: 30px;
+    background-color: transparent;
+    border: none;
+    margin-right: 2%;
+}
+/* button do modal cadastro */
+#Enviar{
+    background-color: #00995D;
+    border: none;
+    border-radius: 10px;
+    width: 10%;
+    color: white;
+    font-size: 25px;
+    padding: 1%;
+}
+
+#editarpaciente {
+    position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 95%;
+        width: 80%;
+        border-radius: 8px;
+        background-color: #fff;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        z-index: 9999;
+        padding: 30px;
+        border: none;
+}
+#editarpaciente input[type="text"],
+#editarpaciente input[type="email"],
+#editarpaciente input[type="date"],
+#editarpaciente select {
+    display: flex;
+        flex-direction: row;
+        margin-bottom: 1%;
+        width: 70%;
+        box-sizing: border-box;
+        border: none;
+        border: 1px solid #00995D;
+        border-radius: 10px;
+        font-size: 30px;
+        font-family: Arial, sans-serif;
+
+}
+#editarpaciente label {
+    margin-bottom: 1%;
+        font-size: 25px;
+        font-weight: bold;
+        font-family: Arial, sans-serif;
+}
+#cadastro31{
+    margin-top: -700px;
+}
+#botaoeditar{
+background-color: #00995D;
+    border: none;
+    border-radius: 10px;
+    width: 10%;
+    color: white;
+    font-size: 25px;
+    padding: 1%;
+    
+}
+#fechareditar{
+    font-size: 30px;
+    background-color: transparent;
+    border: none;
+    margin-right: 2%;
+}
+/* ........//bola cadastro */
+.bolacadastro {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: white;
+    text-align: center;
+    top: 2px;
+    margin-right: 10px;
+    
+   
+
+}
+
+.bolacadastro span {
+    position: relative;
+    z-index: 1;
+    line-height: 30px;
+    color: #00995D;
+    top: -3px;
+    right: -2px;
+
+}
+#dadospaciente {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 90%;
+    width: 90%;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    padding: 30px;
+    border: none;
+
+}
+#dadospaciente input[type="text"],
+#dadospaciente input[type="email"],
+#dadospaciente input[type="date"],
+#dadospaciente select {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1%;
+    width: 70%;
+    box-sizing: border-box;
+    border: none;
+    border: 1px solid #00995D;
+    border-radius: 10px;
+    font-size: 30px;
+    font-family: Arial, sans-serif;
+
+}
+
+#dadospaciente label {
+    margin-bottom: 1%;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}

@@ -1,0 +1,302 @@
+/* paciente que fica a esquerda. */
+.identificaçao{
+    color: #00995D; 
+    font-size: 25px;
+}
+
+
+.buttonsessao {
+    border: none;
+    background-color: white;
+    font-family: Montserrat;
+    font-size: large;
+    color: #616161;
+    font-weight: bold;
+}
+/* ....... modal sessao nova........ */
+#modal{
+    width: 50%;
+    height: 95%;
+    border: none;
+    border-radius: 5%;
+    
+}
+.modal-title{
+    color: #00995D;
+    margin-left: 2%;
+    margin-bottom: 1%;
+    font-weight: 700;
+    font-size: 35px;
+}
+.bola {
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #00995D;
+    text-align: center;
+
+}
+
+.bola span {
+    position: relative;
+    z-index: 1;
+    line-height: 30px;
+    color: white;
+    top: 2px;
+       
+}
+#input-data{
+    width: 20%;
+    height: 10%;
+    align-items: center;
+}
+#input-hora-inicio{
+    width: 30%;
+     height: 45px;
+    align-items: center;
+    border-radius: 20px;
+}
+#input-hora-fim{
+    width: 30%;
+    height: 45px;
+    align-items: center;
+    border-radius: 20px;
+}
+label{
+    font-size: 20px;
+}
+#valor{
+    width: 50%;
+    height: 10%;
+}
+#fechar1{
+    background-color: transparent;
+   border: none; 
+   color: #616161; 
+   font-size: 25px;
+   margin-right: 10px;
+
+}
+#criar-button{
+    background-color: #00995D;
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-right: 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    border: none;
+}
+/* .....modal editar sessao. */
+#modaleditar {
+    position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: none;
+        border-radius: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+#data12 {
+    width: 30%;
+    height: 45px;
+    align-items: center;
+    margin-right: 2%;
+    border-radius: 20px;
+}
+
+#hora-inicio1 {
+    width: 30%;
+    height: 45px;
+    align-items: center;
+    border-radius: 20px;
+}
+
+#hora-fim1 {
+    width: 30%;
+    height: 45px;
+    align-items: center;
+    border-radius: 20px;
+}
+
+#valor1 {
+    width: 30%;
+    height: 10%;
+}
+#cancelarsessao{
+    background-color: transparent;
+    border: none;
+    color: #757575;
+    font-size: 25px;
+    margin-right: 5%;
+}
+#editarsessao{
+    background-color: #00995D;
+    font-weight: bold;
+    border: none;
+    padding: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-size: 25px;
+}
+
+/* .....modalfatosrelevantes...... */
+#modal-dialog{
+    border: none;
+    width: 40%;
+    height: 55%;
+    border-radius: 20px;
+}
+#input-titulo{
+    width: 85%;
+    height: 45px;
+    border-radius: 20px;
+}
+#input-data{
+    width: 40%;
+    height: 45px;
+    border-radius: 20px;
+        
+}
+#input-descricao{
+    border-radius: 20px;
+    height: 150px;
+}
+#modal-criar{
+    background-color: #00995D;
+    color: white;
+    padding-top: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-right: 10px;
+    font-size: 20px;
+    border: none;
+}
+#modal-cancelar{
+    background-color: white;
+    border: none;
+    color: #616161;
+    font-size: 25px;
+    margin-right: 10px;
+}
+/* .....modalfatoseditar..... */
+#modaleditarfatos {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+#fatoscancelar{
+    background-color: white;
+        border: none;
+        color: #616161;
+        font-size: 25px;
+        margin-right: 10px;
+}
+#modal-editar{
+    background-color: #00995D;
+        color: white;
+        padding-top: 10px;
+        padding-left: 40px;
+        padding-right: 40px;
+        margin-right: 10px;
+        font-size: 20px;
+        border: none;
+}
+/* ......... array de fatos e sessoes......... */
+.elipse{
+    position: relative;
+        top: -1.5em;
+}
+.m-white{
+    position: absolute;
+        top: -0.6em;
+        left: 1em;
+        width: 1.5em;
+        height: 1.4em;
+}
+.elipse-b{
+    position: relative;
+    top: -1.5em;
+}
+.m-white-b{
+    position: absolute;
+    top: -0.6em;
+    left: 1em;
+    width: 1.5em;
+    height: 1.4em;
+}
+.in-between{
+    height: 5em;
+    margin-left: 1.8em;
+    border-left: 0.2em solid #2f80ed;
+}
+/* quando estiver no topo  essa div estara em display none 'parte das sessoes */
+.in-between:first-child {
+    display: none;
+}
+.in-between2 {
+    height: 5em;
+    margin-left: 1.8em;
+    margin-bottom: -2.0em;
+    border-left: 0.2em solid #00995D;  
+}
+/* quando estiver no topo essa div estara em display none 'parte dos fatos*/
+.in-between2:first-child {
+    display: none;
+}
+
+
+.sessao1{
+    border-left: 0.3em solid #00995D;
+}
+.relevante1{
+    border-left: 0.3em solid #2F80ED;
+}
+.ellipsis{
+    margin-top: -40px;
+}
+/* terceira pagina sessao do paciente */
+ #paragrafopagamento {
+     margin-top: -20px;
+    font-size: 1.2em;
+    gap: 6.4em;
+ }
+  #paragrafofixo {
+      color: #757575;
+      font-size: 1.5em;
+  }
+  #seleccionar{
+    background-color: transparent;
+    border: none;
+    color: black;
+
+  }
+
+  #sessaonova{
+    text-decoration: none;
+  }
+  #cabeçalho {
+      height: 100px;
+      color: #00995D;
+      font-family: Montserrat;
+  }
+  #emaiL{
+    font-size: 30px;
+  }
+  .sairtela{
+    text-decoration: none;
+    color: black;
+
+  }
+  
+  #sessaonova{
+    color: black;
+  }

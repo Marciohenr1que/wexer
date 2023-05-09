@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>meus pacientes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+        <link rel="stylesheet" href="stylepacientes.css">
+        <script defer src="./principal.js"></script>
+        
+</head>
+<body style="background-color:  #E5E5E5;">
+    <header class="d-flex justify-content-between border-bottom shadow" id="cabeçalho" style="background-color: white;">
+        <div class="logo px-4 py-3 border-bottom shadow">
+            <img src="./imagens/logo (4).png" alt="">
+        </div>
+        <div class="end d-flex mt-4">
+            <p class="fs-4">Bem vindo(a)</p>
+           <div id="loginNovo"></div>
+            <div class="dropdows mb-1 mr-1">
+                <button class="btn dropdown-toggle p-8" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false"></button>
+                <ul class="dropdown-menu p-0">
+                    <div id="emaiL"></div>
+                    <li><a href="index.html">Sair</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container justify-content-center">
+        <div class="row">
+            <div class="pesquisar d-flex justify-content-between mt-2">
+                <div class="pesquisar-centro">
+                    <h2 class="mt-2 py-2">Prontuário</h2>
+                </div>
+                <div class="pesquisardt d-flex mt-4">
+                    <input type="search" class="form-control" placeholder="procurar" aria-label="nome do paciente" id="pesquisar">
+                    <button class="btn btn-success filter rounded-end-5 text-white" type="button" id="filtrar"><img src="./imagens/Mask.png"
+                            alt=""> Filtrar</button>
+                </div>
+            </div>
+    
+        </div>
+    
+    </div>
+    <div class="content d-flex flex-column  justify-content-center">
+        <div class="col-12 d-flex flex-wrap justify-content-start gap-4 mt-4">
+            <div class="col-sm-12 col-md-3 bg-white section-first rounded-3 h-50">
+                <div id="cliente"></div>
+            </div>
+    
+            <div class="col-md-8">
+                <div class="row">
+                    <div
+                        class="col-sm-12 bg-white section d-flex align-items-center justify-content-around p-lg-3 rounded-3">
+                        <button class="buttonsessao" onclick=" openModal()"><img src="./imagens/sessao.png"
+                                alt="">Sessão</button>
+                                <!-- .......novasessaomodal....... -->
+                        <dialog id="modal" class="modal-lg">
+                            <form id="novasessao">
+                                <div class="modal-header">
+                                    <h3 class="modal-title mt-4">Nova sessão</h3>
+                                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Fechar"
+                                        id="fechar2" onclick="closeModal1()"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <h4 class="ml-5"><div class="bola m-3"><span>1</span></div> Dados gerais</h4>
+                                    <div class="form-inline mt-3 d-flex">
+                                        <label class="form-label m-3">Data</label>
+                                        <input type="date" class="form-control me-3" id="input-data" required>
+                                        <label class="form-label me-3">Hora de início</label>
+                                        <input type="time" class="form-control me-3" id="input-hora-inicio" required>
+                                        <label class="form-label me-3">Hora de fim</label>
+                                        <input type="time" class="form-control me-3" id="input-hora-fim" required>
+                                    </div>
+                                    <hr>
+                                    <h4 class="ml-5"><div class="bola m-3"><span>2</span></div> Sessão</h4>
+                                    <div class="mb-3">
+                                        <label class="form-label">Título</label>
+                                        <input type="text" class="form-control" id="input-titulo" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="input-resumo" class="form-label">Resumo da sessão</label>
+                                        <textarea class="form-control" id="input-resumo" rows="3"></textarea>
+                                    </div>
+                                    <h4 class="ml-5"><div class="bola m-3"><span>3</span></div> Pagamento</h4>
+                                    <div class="form-inline d-flex justify-content-between">
+                                        <div class="col-sm-2">
+                                            <label class="col-form-label">Valor</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" id="valor" required>
+                                                <span class="input-group-text">R$</span>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="input-forma-pagamento" class="form-label">Forma de pagamento</label>
+                                            <select class="form-select" id="input-forma-pagamento" required>
+                                                <option value="" selected disabled>Selecione uma opção</option>
+                                                <option>Pix</option>
+                                                <option>Dinheiro</option>
+                                                <option>Cartão</option>
+                                            </select>
+                                        </div>
+                                        <div class="mt-1">
+                                            <label class="form-check-label">Status</label>
+                                            <div class="form-check d-flex gap-4 mt-2">
+                                                <input class="form-check-input" type="radio" id="input-pago" name="pagamentopago" required>
+                                                <label class="form-check-label">Pago</label>
+                                                <input class="form-check-input" type="radio" id="input-nao-pago" name="pagamentopago" required>
+                                                <label class="form-check-label">Não pago</label>
+                                            </div>
+    
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="modal-footer justify-content-end mt-5">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                                        onclick="closeModal1()" id="fechar1">Cancelar</button>
+                                    <button type="submit" class="btn btn-primary" id="criar-button">Criar</button>
+                                </div>
+                            </form>
+                        </dialog>
+                        <button class="buttonsessao" onclick="openmodal2()"><img src="./imagens/fato.png" alt="">Fato
+                            relevante</button>
+                            <!-- ....... fatos relevantes modal...... -->
+                        <dialog id="modal-dialog">
+                            <div class="modal-header">
+                                <h2 class="m-3" style="color: #00995D; font-weight: bold;">Novo Fato Relevante</h2>
+                                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Fechar"
+                                    onclick="closeModal()"></button>
+                            </div>
+                            <form id="Modalrelevante">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col">
+                                            <label>Data*</label>
+                                            <input type="date" id="input-datafatos" class="form-control" required>
+                                        </div>
+                                        <div class="col">
+                                            <label>Título *</label>
+                                            <input type="text" id="input-titulofatos" class="form-control"
+                                                placeholder="Digite o título" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label>Descrição *</label>
+                                    <textarea id="input-descricao" rows="3" placeholder="text" required></textarea>
+                                </div>
+                                <hr>
+                                <div class="modal-buttons mt-3">
+                                    <div>
+                                        <p>*campos obrigatorios</p>
+                                    </div>
+                                    <div class="d-flex justify-content-end">
+                                        <button type="button" class="btn btn-secondary" id="modal-cancelar"
+                                            onclick="closeModal()">Cancelar</button>
+                                        <button type="submit" class="btn btn-primary fw-bold" id="modal-criar">Criar</button>
+                                    </div>
+                                </div>
+    
+                            </form>
+                        </dialog>
+      
+    
+                    </div>
+                    <div class="col-12 d-flex mt-4 d-flex justify-content-end">
+                        <span class="todos">Filtrar por Todos</span>
+                        <div class="dropdown-flex d-flex align-center">
+    
+                            <span class="todos">Todos</span>
+                            <button type="button" class="dropdown-toggle" data-bs-toggle="dropdown"></button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li>todos</li>
+                                <button>sessão</button>
+                                <button>Fato Relevante</button>
+    
+                            </ul>   
+                        </div>
+    
+    
+                    </div>
+                   <!-- aqui fica as sessoes e fatos -->
+                <div id="sessao123"></div>    
+                </div>
+    
+    
+            </div>
+   
+        </div>
+    </div>
+    <!-- ...................................................................modal sessoes editar ...................... -->
+    <dialog id="modaleditar" class="modal-lg">
+        <form id="novasessaoeditar22">
+            <div class="modal-header">
+                <h2 class="modal-title">Editar Sessões do Paciente</h2>
+                <button type="button" class="btn-close" data-dismiss="modal" id="fechar2"
+                    onclick="closeModaleditar()"></button>
+            </div>
+            <div class="modal-body">
+                <h4 class="ml-5">
+                    <div class="bola m-3"><span>1</span></div> Dados gerais
+                </h4>
+                <div class="form-inline mt-3 d-flex">
+                    <label  class="form-label m-3">Data</label>
+                    <input type="date" class="form-control" id="data12" name="data">
+                    <label  class="form-label me-3">Hora de início</label>
+                    <input type="time" class="form-control me-3" id="hora-inicio1" name="hora_Inicio">
+                    <label  class="form-label me-3">Hora de fim</label>
+                    <input type="time" class="form-control me-3" id="hora-fim1" name="hora_Fim">
+                </div>
+                <hr>
+                <h4 class="ml-5">
+                    <div class="bola m-3"><span>2</span></div> Sessões
+                </h4>
+                <div class="mb-3">
+                    <label class="form-label">Título</label>
+                    <input type="text" class="form-control" id="titulo1" name="titulo_sessao">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Resumo da sessão</label>
+                    <textarea class="form-control" id="resumo1" rows="3" name="resumo_sessao"></textarea>
+                </div>
+                <h4 class="ml-5">
+                    <div class="bola m-3"><span>3</span></div> Pagamento
+                </h4>
+                <div class="form-inline d-flex justify-content-between">
+                    <div class="col-sm-2">
+                        <label class="col-form-label">Valor</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="valoreditar" name="valor_sessao">
+                            <span class="input-group-text">R$</span>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Forma de pagamento</label>
+                        <select class="form-select" id="forma-pagameto12" name="forma_sessao">
+                            <option value="selected disabled">Selecione uma opção</option>
+                            <option value="Pix">Pix</option>
+                            <option value="Dinheiro">Dinheiro</option>
+                            <option value="Cartao">Cartão</option>
+                        </select>
+                    </div>
+                    <div class="mt-1">
+                        <label class="form-check-label">Status</label>
+                        <div class="form-check d-flex gap-4 mt-2">
+                            <input class="form-check-input" type="radio" id="pago1" name="status"  value="pago">
+                            <label class="form-check-label">Pago</label>
+                            <input class="form-check-input" type="radio" id="naopago1" name="status" value="não pago">
+                            <label class="form-check-label">Não pago</label>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="modal-footer justify-content-end mt-5">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cancelarsessao" onclick="closeModaleditar()">Cancelar</button>
+                <button type="submit" class="btn btn-primary" id="editarsessao">Editar</button>
+            </div>
+            <div id="paciente22" name="paciente"></div>
+        </form>
+    </dialog>
+    <!-- ................................modalfatoseditar.......................................... -->
+    <dialog id="modaleditarfatos">
+        <div class="modal-header">
+            <h2 class="m-3" style="color: #00995D; font-weight: bold;">Editar Fato Relevante</h2>
+            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Fechar"
+                onclick="closeModalfatoseditar()"></button>
+        </div>
+        <form id="Modalrelevanteeditar">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col">
+                        <label>Data *</label>
+                        <input type="date" id="datafatoseditar" class="form-control" name="data" required>
+                    </div>
+                    <div class="col">
+                        <label>Título *</label>
+                        <input type="text" id="titulofatoseditar" class="form-control" placeholder="Digite o título" name="titulo" required>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label>Descrição *</label>
+                <textarea id="descriçãoeditar" rows="3" name="textorelevante" required></textarea>
+            </div>
+            <hr>
+            <div class="modal-buttons mt-3">
+                <div>
+                    <h6>*campos obrigatorios</h6>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <button type="button" class="btn btn-secondary" id="fatoscancelar"
+                        onclick="closeModalfatoseditar()">Cancelar</button>
+                    <button type="submit" class="btn btn-primary" id="modal-editar">Editar</button>
+                </div>
+            </div>
+    <div id="fatospaciente" name="paciente"></div>
+        </form>
+    </dialog>
+
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+        crossorigin="anonymous"></script>
+        <script>
+             function openModal() {
+                    const modal = document.querySelector('#modal')
+                    modal.showModal();
+                   
+                }
+
+                function closeModal1() {
+                   
+                        const modal = document.querySelector('#modal')
+                        modal.close()
+                    }
+                
+                function openmodal2(){
+                    const modal2 = document.querySelector('#modal-dialog')
+                    modal2.showModal()
+
+                }
+                 function closeModal() {
+
+                        const modal = document.querySelector('#modal-dialog');
+                        modal.close()
+                    }
+
+                     function openModaleditar() {
+                            const modal = document.querySelector('#modaleditar')
+                            modal.showModal();
+
+                        }
+                        
+                       function closeModaleditar() {
+                        const modal = document.querySelector('#modaleditar')
+                        modal.close()
+                       }
+
+
+                       function closeModalfatoseditar(){
+                        const modal = document.querySelector('#modaleditarfatos')
+                        modal.close()
+                        
+                    }
+                
+        </script>
+</body>
+</html>
