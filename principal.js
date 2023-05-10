@@ -1,4 +1,4 @@
-
+const apiurl = 'https://moduloarnia1.onrender.com/'
 let form1 = document.getElementById('paciente1')
 form1?.addEventListener('submit', (evento) => {
     evento.preventDefault()
@@ -45,7 +45,7 @@ async function lista(cpf, nome, dnascimento, email, sexo, nacionalidade, natural
 //os resultados na pagina do paciente estava pegando tambem os fatos e sessoes do cliente que tinha excluido teria que no caso excluir fatos e sessoes deste cliente mas 
 //como iria excluir os fatos e sessoes se ja tinha excluido o paciente na pagina anterior
 async function lista_paciente(dados){
-        await fetch("http://localhost:3000/paciente", {
+        await fetch(apiurl + "/paciente", {
             method: "POST",
             headers: {
                 'Accept': 'application/json, text/plain, /',
@@ -56,7 +56,7 @@ async function lista_paciente(dados){
 }
   
  async function getposts(){
-  const apiResponse = await fetch('http://localhost:3000/paciente')
+  const apiResponse = await fetch(apiurl +'/paciente')
      const posts = await apiResponse.json()  
      console.log(posts)
    
@@ -107,7 +107,7 @@ botaofiltrar.addEventListener('click', async () => {
   const valorBusca = procurar.value
 
   // Fazer a requisição para buscar todos os pacientes do json-server
-  const response = await fetch('http://localhost:3000/paciente');
+  const response = await fetch(apiurl +'/paciente');
   const pacientes = await response.json()
 
   // Filtrar os pacientes com base na entrada de pesquisa
@@ -122,7 +122,7 @@ botaofiltrar.addEventListener('click', async () => {
 // Ao carregar a página, exibir todos os pacientes
 async function carregarPacientes() {
   // Fazer a requisição para buscar todos os pacientes do json-server
-  const response = await fetch('http://localhost:3000/paciente');
+  const response = await fetch(apiurl +'/paciente');
   const pacientes = await response.json();
 
   // Exibir os pacientes
@@ -133,7 +133,7 @@ carregarPacientes()
 
 async function leitura(id) {
   
-  const post1 = await fetch(`http://localhost:3000/paciente/${id}`);
+  const post1 = await fetch(apiurl +'/paciente'+ id);
   const post = await post1.json();
 
   document.getElementById('dadospaciente').open = true;
@@ -158,7 +158,7 @@ async function leitura(id) {
 }
 
 async function editar(id) {
-  const post1 = await fetch(`http://localhost:3000/paciente/${id}`);
+  const post1 = await fetch(apiurl+'/paciente/' + id)
   const post = await post1.json();
 
   document.getElementById('editarpaciente').open = true;
@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
 
 async function removerpost(id) {
-   await fetch(`http://localhost:3000/paciente/${id}`, {
+   await fetch(apiurl +'/paciente/'+ id, {
        method: "DELETE"
         
   })
@@ -287,7 +287,7 @@ async function modal(data, horainicio, horafim, titulo, resumo, valor, formadepa
 
 async function lista_sessao(id) {
     
-    await fetch('http://localhost:3000/sessao', {
+    await fetch(apiurl +'/sessao', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -323,7 +323,7 @@ async function modalrelevante(datarelevante, titulo, textorelevante) {
     await lista_fatos(post3)
 }
 async function lista_fatos(dados3){
-        await fetch("http://localhost:3000/fatos_relevantes", {
+        await fetch(apiurl +'/fatos_relevantes', {
             method: "POST",
             headers: {
                 'Accept': 'application/json, text/plain, /',
@@ -337,11 +337,11 @@ async function lista_fatos(dados3){
 async function listarSessoesEFatos() {
   const urlParams = new URLSearchParams(window.location.search)
   const usuario = urlParams.get('usuario')
-  const responseSessoes = await fetch('http://localhost:3000/sessao')
+  const responseSessoes = await fetch(apiurl +'/sessao')
   const sessoes = await responseSessoes.json()
   const sessoesFiltradas = sessoes.filter(sessao => sessao.paciente === usuario)
 
-  const responseFatos = await fetch('http://localhost:3000/fatos_relevantes')
+  const responseFatos = await fetch(apiurl +'/fatos_relevantes')
   const fatos = await responseFatos.json();
   const fatosFiltrados = fatos.filter(fato => fato.paciente === usuario)
 
@@ -409,7 +409,7 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 //deletar sessoes
 async function deletar(id) {
-   await fetch(`http://localhost:3000/sessao/${id}`, {
+   await fetch(apiurl +'/sessao/'+ id, {
        method: "DELETE"
         
   })
@@ -418,7 +418,7 @@ async function deletar(id) {
 
 async function editarsessao(id) {
  document.getElementById('modaleditar').open = true
-  const post1 = await fetch(`http://localhost:3000/sessao/${id}`);
+  const post1 = await fetch(apiurl+'/sessao/' + id);
   const editar_sessao = await post1.json()
   
   document.getElementById('data12').value = editar_sessao.data
@@ -452,7 +452,7 @@ formularioeditar.addEventListener('submit', async (event) => {
     paciente: document.getElementById('paciente22').value, //aqui esta armazenado o id do paciente 
   }
   
-  await fetch(`http://localhost:3000/sessao/${id}`, {
+  await fetch(apiurl+'/sessao/' + id, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json'
@@ -463,14 +463,14 @@ formularioeditar.addEventListener('submit', async (event) => {
 }
 //deletar fatos
    async function deletar2(id) {
-   await fetch(`http://localhost:3000/fatos_relevantes/${id}`, {
+   await fetch(apiurl + '/fatos_relevantes/' + id, {
        method: "DELETE"
         
   })
 } 
 async function editarfatos(id) {
   document.getElementById('modaleditarfatos').open = true;
-  const post1 = await fetch(`http://localhost:3000/fatos_relevantes/${id}`);
+  const post1 = await fetch(apiurl +'/fatos_relevantes/' + id);
   const editar_fatos = await post1.json()
  //criei uma div vazia no modal de editar fatos para armazenar o id do paciente ele vem da url.
   document.getElementById('datafatoseditar').value = editar_fatos.data
@@ -489,7 +489,7 @@ async function editarfatos(id) {
 
     }
       
-    await fetch(`http://localhost:3000/fatos_relevantes/${id}`, {
+    await fetch(apiurl +'/fatos_relevantes/' + id, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
@@ -508,7 +508,7 @@ async function finalpacientesessao() {
    const sessao = urlParams.get('sessao')
   console.log(usuario)
 
-  const responseSessoes = await fetch('http://localhost:3000/sessao/' + sessao)
+  const responseSessoes = await fetch(apiurl +'/sessao/' + sessao)
   const sessoes = await responseSessoes.json()
   
   const pacientefinal = document.querySelector('#pacientesessao35')
