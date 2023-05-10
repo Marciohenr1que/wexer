@@ -1,4 +1,4 @@
-const apiurl = 'https://moduloarnia1.onrender.com/'
+const apiurl = 'https://moduloarnia1.onrender.com'
 //? evita acessar a função quando for nula //
 document.querySelector("#cadastro31")?.addEventListener("submit", (cadastro) => {
     cadastro.preventDefault()
