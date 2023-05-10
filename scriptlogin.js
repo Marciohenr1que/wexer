@@ -1,3 +1,4 @@
+const apiurl = 'https://moduloarnia1.onrender.com/'
 //? evita acessar a função quando for nula //
 document.querySelector("#cadastro31")?.addEventListener("submit", (cadastro) => {
     cadastro.preventDefault()
@@ -107,7 +108,7 @@ async function adicionar(nome,mail,senha1,senhaconfirma){  //aqui vou
 }
 
 async function createpost(login) {
-    await fetch("http://localhost:3000/login", {
+    await fetch(apiurl +'/login', {
         method: "POST",
         headers: {
             'Accept': 'application/json, text/plain, */*',
