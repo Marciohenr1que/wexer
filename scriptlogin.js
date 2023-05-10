@@ -1,4 +1,4 @@
-const apiurl = 'https://moduloarnia1.onrender.com'
+
 //? evita acessar a função quando for nula //
 document.querySelector("#cadastro31")?.addEventListener("submit", (cadastro) => {
     cadastro.preventDefault()
@@ -108,7 +108,7 @@ async function adicionar(nome,mail,senha1,senhaconfirma){  //aqui vou
 }
 
 async function createpost(login) {
-    await fetch(apiurl +'/login', {
+    await fetch('https://moduloarnia1.onrender.com/login', {
         method: "POST",
         headers: {
             'Accept': 'application/json, text/plain, */*',
@@ -122,10 +122,10 @@ document.querySelector("#Login23").addEventListener("submit", async (event) => {
     event?.preventDefault()
     const inputusuario = document.getElementById("exampleInputEmail1").value
     const inputsenha = document.getElementById("exampleInputPassword1").value
-  const response = await fetch(apiurl +'/login')
+  const response = await fetch('https://moduloarnia1.onrender.com/login')
     const logar = await response.json()
     
-  const usuarioEncontrado = logar.find(item => item.nome == inputusuario && item.senha1 == inputsenha && item.confirmarsenha == inputsenha) 
+  const usuarioEncontrado = logar.find(item => item.nome == inputusuario && item.senha1 == inputsenha) 
 
     if (usuarioEncontrado) {
       localStorage.setItem('usuarioLogado', JSON.stringify(usuarioEncontrado))
