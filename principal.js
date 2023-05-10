@@ -1,4 +1,4 @@
-const apiurl = 'https://moduloarnia1.onrender.com/'
+const apiurl = 'https://moduloarnia1.onrender.com'
 let form1 = document.getElementById('paciente1')
 form1?.addEventListener('submit', (evento) => {
     evento.preventDefault()
