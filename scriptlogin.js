@@ -122,7 +122,7 @@ document.querySelector("#Login23").addEventListener("submit", async (event) => {
     event?.preventDefault()
     const inputusuario = document.getElementById("exampleInputEmail1").value
     const inputsenha = document.getElementById("exampleInputPassword1").value
-  const response = await fetch("http://localhost:3000/login")
+  const response = await fetch(apiurl +'/login')
     const logar = await response.json()
     
   const usuarioEncontrado = logar.find(item => item.nome == inputusuario && item.senha1 == inputsenha && item.confirmarsenha == inputsenha) 
